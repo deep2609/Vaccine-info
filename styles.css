@@ -24,11 +24,25 @@ body {
 /* About Section  */
 
 .about {
-    height: 400px;
+    height: 500px;
     padding: 3% 10% 5% 10%;
     background-color: #f3f4ed;
 }
+.about-text{
+  height: 400px;
+  font-family: 'Noto Sans', sans-serif;
 
+}
+
+.about-active{
+   position: relative;
+   left: 140px;
+   top: 100px;
+}
+.carousel-image{
+  position: relative;
+  top: 20px;
+}
 /* Features Section  */
 
 .feature {
