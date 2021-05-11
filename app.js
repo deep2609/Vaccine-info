@@ -22,6 +22,15 @@ app.get("/", function (req, res) {
         }
         // console.log(response.body);
         const cowinData = JSON.parse(response.body);
+        console.log(cowinData.states[0].state_name);
+        const states = cowinData.states;
+        console.log(typeof(states));
+        console.log(states[1].state_name);
+        const state_name=[];
+        for(let i=0;i<=35;i++){
+          state_name.push(states[i].state_name);
+        }
+        for(let i=0;i<=35;i++)console.log(state_name[i]);
         res.send("List of States");
     });
 
@@ -44,10 +53,9 @@ app.get("/district", function(req,res){
 })
 
 
-      
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT,function(){
     console.log("Server Started on Port 3000");
 });
-
