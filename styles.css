@@ -166,3 +166,31 @@ body {
     color: white;
     font-size: 1.3rem;
 }
+
+
+
+/* vaccine_info */
+
+/* home */
+.home{
+  height: 400px;
+}
+
+
+/* Covaxin */
+.covaxin{
+  padding: 20px 20px;
+  height: 700px;
+}
+
+/* Covishield */
+.covishield{
+  padding: 20px 20px;
+  height:700px;
+}
+
+/* Related-NEWS */
+.NEWS{
+  height: 400px;
+  padding: 20px 20px;
+}
