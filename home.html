@@ -145,15 +145,17 @@
             <p>Check the availability of vaccine in your state/district. If available, you can continue on to book an appointment.</p>
           </div>
 
-          <button type="button" class="btn btn-lg btn-success">Check Vaccine Availability</button>
+
+
         </div>
+
         <div class="feature-2 col-4">
           <img data-aos='fade-down' src="images/schedule_img.jpg" alt="" style="height: 272px;width: 269px;">
           <div class="spacing-2">
             <p>Schedule an appointment. If there is no available vaccine currently in your area, we will notify you as and when the vaccines will be available.</p>
 
           </div>
-          <button type="button" class="btn btn-lg btn-success">Schedule Appointment</button>
+
         </div>
         <div class="feature-3 col-4">
           <img data-aos='fade-left' src="images/info_img.png" alt="">
@@ -161,10 +163,58 @@
             <p>Check out the type of vaccines made available by the indian government. Find all the informationabout them.</p>
           </div>
 
-          <button type="button" class="btn btn-lg btn-success">Vaccines Info</button>
+          <a href="vaccine_info.html"> <button type="button" class="btn btn-lg btn-success">Vaccines Info</button></a>
+
         </div>
       </div>
 
+      <div class="row">
+        <div class="col-4">
+          <button id="pinButton" type="button" class="btn btn-info btn-lg btn-block">Search by Pin</button>
+
+        </div>
+        <div class="col-4">
+          <button id="stateButton" type="button" class="btn btn-light btn-lg btn-block">Search by District</button>
+        </div>
+      </div>
+
+      <div class="row spacing-2">
+        <div class="col-8">
+
+          <form action="" method="get">
+            <div class="container">
+              <div id="selectByState">
+                <div class="input-group mb-3" id="inputGroupSelect02">
+                  <select class="custom-select" name="state" id="state">
+                    <option value="no-option">Select State</option>
+                  </select>
+                  <select class="custom-select" name="district" id="district">
+                    <option value="no-option">Choose District</option>
+                  </select>
+                </div>
+
+
+
+              </div>
+
+              <div id="selectByPin">
+                <label for="pincode">Pincode</label>
+                <input type="text" name="pin">
+              </div>
+            </div>
+        </div>
+
+      </div>
+
+      <div class="row spacing-2">
+        <div class="col-4">
+          <button type="button" class="btn btn-lg btn-success">Check Vaccine Availability</button>
+        </div>
+        <div class="col-4">
+          <button type="button" class="btn btn-lg btn-success">Schedule Appointment</button>
+
+        </div>
+      </div>
     </div>
 
     <!-- Covid Guidelines Section  -->
@@ -177,7 +227,7 @@
         </span>
         <div class="">
           <div class="row spacing-1">
-            <div data-aos='fade-right'class="col-lg-4 col-md-6">
+            <div data-aos='fade-right' class="col-lg-4 col-md-6">
               <div class="card">
                 <div class="card-body">
                   <img class="card-img-top card-image" src="images/pic-1.jpeg" alt="Card image cap">
@@ -286,6 +336,8 @@
     </footer>
 
     <!-- JavaScript Code  -->
+    <script src="script.js"></script>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init({
@@ -294,6 +346,7 @@
         easing: 'ease-in-out'
       });
     </script>
+
 </body>
 
 </html>
