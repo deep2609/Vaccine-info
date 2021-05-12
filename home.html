@@ -198,7 +198,7 @@
               </div>
 
               <div id="selectByPin">
-                <label for="pincode">Pincode</label>
+                <label for="pincode">Pincode : </label>
                 <input type="text" name="pin">
               </div>
             </div>
@@ -208,7 +208,7 @@
 
       <div class="row spacing-2">
         <div class="col-4">
-          <button type="button" class="btn btn-lg btn-success">Check Vaccine Availability</button>
+          <button id="checkAvailability" type="button" class="btn btn-lg btn-success">Check Vaccine Availability</button>
         </div>
         <div class="col-4">
           <button type="button" class="btn btn-lg btn-success">Schedule Appointment</button>
@@ -216,6 +216,127 @@
         </div>
       </div>
     </div>
+
+    <!-- Search Results -->
+    <div id="availabilityOutput" class="results spacing-1" style="padding-left:120px;">
+      <span class="headings">
+        <h1 data-aos='fade-right' class="section-heading">Availability Data</h1>
+      </span>
+
+      <div class="container spacing-1">
+        <div class="panel-body table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Centres</th>
+                <th id="d-1">head</th>
+                <th id="d-2">head</th>
+                <th id="d-3">head</th>
+                <th id="d-4">head</th>
+                <th id="d-5">head</th>
+                <th id="d-6">head</th>
+                <th id="d-7">head</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+
+              <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+
 
     <!-- Covid Guidelines Section  -->
 
@@ -337,6 +458,9 @@
 
     <!-- JavaScript Code  -->
     <script src="script.js"></script>
+    <script src="app.js">
+
+    </script>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
