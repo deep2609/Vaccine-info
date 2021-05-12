@@ -70,7 +70,7 @@ body {
 
 /* Availability Results */
 .results {
-  height: 400px;
+  height: 700px;
 }
 
 /* .dtHorizontalVerticalExampleWrapper {
@@ -79,7 +79,7 @@ body {
 } */
 
 .table-responsive {
-    max-height:300px;
+    max-height:500px;
     max-width: 1000px;
 }
 
