@@ -1,7 +1,7 @@
 let pinButton = document.getElementById('pinButton');
 let stateButton = document.getElementById('stateButton');
 
-$("#selectByPin").hide();
+$("#selectByState").hide();
 
 pinButton.addEventListener("click", function () {
     $("#selectByPin").show();
