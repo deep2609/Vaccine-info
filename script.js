@@ -202,7 +202,7 @@ checkAvailability.addEventListener("click", function(){
            }
 
            response.json().then(function(data) {
-              console.log(data);
+              
 
               for(let i=0;i<data.centers.length;i++){
 
@@ -220,10 +220,10 @@ checkAvailability.addEventListener("click", function(){
                     tempData.push(currData);
                  }
                  let idx=0;
-                 console.log(tempData[idx][0].substring(1,tempData[idx][0].length-1));
-                 console.log(dates[0]);
+
+
                  for(let j=0;j<7;j++){
-                   console.log(0);
+
                      if(idx==tempData.length){
                        addRow+="<td>No Slots</td>";
                      }else{
@@ -257,7 +257,7 @@ checkAvailability.addEventListener("click", function(){
            }
 
            response.json().then(function(data){
-              console.log(data);
+
 
 
               for(let i=0;i<data.centers.length;i++){
@@ -274,10 +274,8 @@ checkAvailability.addEventListener("click", function(){
                     tempData.push(currData);
                  }
                  let idx=0;
-                 console.log(tempData[idx][0].substring(1,tempData[idx][0].length-1));
-                 console.log(dates[0]);
+
                  for(let j=0;j<7;j++){
-                   console.log(0);
                      if(idx==tempData.length){
                        addRow+="<td>No Slots</td>";
                      }else{
