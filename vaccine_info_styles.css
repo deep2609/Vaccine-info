@@ -1,5 +1,7 @@
 body {
     margin-top: 73px;
+    font-family: 'Itim', cursive;
+
 }
 
 .section-heading {
@@ -185,7 +187,7 @@ body {
 }
 
 .list {
-    font-family: 'Roboto Slab', serif;
+    /* font-family: 'Roboto Slab', serif; */
     padding-bottom: 5px;
 
 }
@@ -238,4 +240,28 @@ body {
 
 .scrollbar-success {
     scrollbar-color: #00C851 #F5F5F5;
+}
+
+.covid-stats {
+    font-family: 'Itim', cursive;
+    height: auto;
+    padding: 3% 10% 2% 10%;
+    background-color: #f3f4ed;
+    text-align: center;
+}
+.statistics{
+    padding: 1% 9%;
+}
+
+.flag {
+    height: 25px;
+    border-radius: 5px;
+}
+
+.borders{
+    border-right: 7px solid red; 
+}
+.borderless-container{
+    padding: 30px 20px;
+    font-weight: 700;
 }
