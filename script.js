@@ -202,13 +202,13 @@ checkAvailability.addEventListener("click", function(){
            }
 
            response.json().then(function(data) {
-              
+
 
               for(let i=0;i<data.centers.length;i++){
 
                  // adding a row
                  let addRow = "<tr>";
-                 addRow+="<td>"+data.centers[i].name+"</td>";
+                 addRow+="<td style='background:#f7a440;'>"+data.centers[i].name+"</td>";
 
                  let tempData = [];
                  for(let j=0;j<data.centers[i].sessions.length;j++){
@@ -262,7 +262,7 @@ checkAvailability.addEventListener("click", function(){
 
               for(let i=0;i<data.centers.length;i++){
                  let addRow = "<tr>";
-                 addRow+="<td>"+data.centers[i].name+"</td>";
+                 addRow+="<td style='background:#f7a440;'>"+data.centers[i].name+"</td>";
 
                  let tempData = [];
                  for(let j=0;j<data.centers[i].sessions.length;j++){
@@ -290,7 +290,7 @@ checkAvailability.addEventListener("click", function(){
                  }
 
                  addRow+="</tr>";
-                 let tableBody = $("table tbody");
+                 let tableBody = $("#data-body");
                  tableBody.append(addRow);
 
               }
@@ -299,3 +299,20 @@ checkAvailability.addEventListener("click", function(){
          });
       }
 });
+
+
+
+// var tableOffset = $("#availabilityTable").offset().top;
+// var $header = $("#availabilityTable > thead").clone();
+// var $fixedHeader = $("#header-fixed").append($header);
+//
+// $().bind("scroll", function() {
+//     var offset = $(this).scrollTop();
+//
+//     if (offset >= tableOffset && $fixedHeader.is(":hidden")) {
+//         $fixedHeader.show();
+//     }
+//     else if (offset < tableOffset) {
+//         $fixedHeader.hide();
+//     }
+// });
