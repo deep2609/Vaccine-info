@@ -80,8 +80,20 @@ body {
 
 .table-responsive {
     max-height:500px;
-    max-width: 1000px;
+    max-width: 1100px;
 }
+
+.fixTableHead {
+      overflow-y: auto;
+      height: 500px;
+}
+.fixTableHead thead th {
+      position: sticky;
+      top: 0;
+}
+th {
+      background: #ABDD93;
+    }
 
 
 /* Guidelines Section */
