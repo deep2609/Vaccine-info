@@ -208,7 +208,7 @@ checkAvailability.addEventListener("click", function(){
 
                  // adding a row
                  let addRow = "<tr>";
-                 addRow+="<td style='background:#f7a440;'>"+data.centers[i].name+"</td>";
+                 addRow+="<td style='background:#f7a440;'><h5>"+data.centers[i].name+"</h5></td>";
 
                  let tempData = [];
                  for(let j=0;j<data.centers[i].sessions.length;j++){
@@ -228,8 +228,13 @@ checkAvailability.addEventListener("click", function(){
                        addRow+="<td>No Slots</td>";
                      }else{
                        if(tempData[idx][0].substring(1,tempData[idx][0].length-1)==dates[j]){
+                         if(tempData[idx][1]!=0){
+                            addRow+="<td style:'background:#f9f871;'>Available Capacity : "+tempData[idx][1]+"<br>Min Age : "+tempData[idx][2]+"<br>Vaccine : "+tempData[idx][3]+"</td>";
+                         }
+                         else{
+                           addRow+="<td>Available Capacity : "+tempData[idx][1]+"<br>Min Age : "+tempData[idx][2]+"<br>Vaccine : "+tempData[idx][3]+"</td>";
+                         }
 
-                         addRow+="<td>Available Capacity : "+tempData[idx][1]+"<br>Min Age : "+tempData[idx][2]+"<br>Vaccine : "+tempData[idx][3]+"</td>";
                          idx++;
                        }else{
                          addRow+="<td>No Slots</td>"
@@ -262,13 +267,13 @@ checkAvailability.addEventListener("click", function(){
 
               for(let i=0;i<data.centers.length;i++){
                  let addRow = "<tr>";
-                 addRow+="<td style='background:#f7a440;'>"+data.centers[i].name+"</td>";
+                 addRow+="<td style='background:#f7a440;'><h5>"+data.centers[i].name+"</h5></td>";
 
                  let tempData = [];
                  for(let j=0;j<data.centers[i].sessions.length;j++){
                     let currData =[];
                     currData.push(JSON.stringify(data.centers[i].sessions[j].date));
-                    currData.push(JSON.stringify(data.centers[i].sessions[j].available_capacity));
+                    currData.push((data.centers[i].sessions[j].available_capacity));
                     currData.push(JSON.stringify(data.centers[i].sessions[j].min_age_limit));
                     currData.push(JSON.stringify(data.centers[i].sessions[j].vaccine));
                     tempData.push(currData);
@@ -280,8 +285,15 @@ checkAvailability.addEventListener("click", function(){
                        addRow+="<td>No Slots</td>";
                      }else{
                        if(tempData[idx][0].substring(1,tempData[idx][0].length-1)==dates[j]){
+                         console.log(typeof(tempData[idx][1]));
+                         console.log(tempData[idx][1]>0);
+                         if(tempData[idx][1]>0){
 
-                         addRow+="<td>Available Capacity : "+tempData[idx][1]+"<br>Min Age : "+tempData[idx][2]+"<br>Vaccine : "+tempData[idx][3]+"</td>";
+                            addRow+="<td style='background:#f9f871;'>Available Capacity : "+tempData[idx][1]+"<br>Min Age : "+tempData[idx][2]+"<br>Vaccine : "+tempData[idx][3]+"</td>";
+                         }
+                         else{
+                           addRow+="<td>Available Capacity : "+tempData[idx][1]+"<br>Min Age : "+tempData[idx][2]+"<br>Vaccine : "+tempData[idx][3]+"</td>";
+                         }
                          idx++;
                        }else{
                          addRow+="<td>No Slots</td>"
