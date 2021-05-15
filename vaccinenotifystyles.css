@@ -1,6 +1,5 @@
 body {
     padding-top: 73px;
-    text-align: center;
 }
 
 .icon {
@@ -21,13 +20,17 @@ body {
 }
 
 .form {
-    padding: 1% 10%;
-    background-color: #fae8ed;
-    height: auto;
+    padding: 3% 10%;
+    background-color: #fbe4cf;
+    height: 900px;
+    text-align: center;
 }
 
 .form-text {
-    padding: 5% 40% 1%;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 2px 2px 2px rgba(186, 186, 186, 1);
+    color: grey;
+    padding: 1% 40% 1%;
 }
 
 .form-data {
@@ -41,4 +44,24 @@ select, input {
 .getnotified{
     margin-top: 25px;
     margin-bottom: 10px;
+}
+
+.update-details{
+    padding-top: 15px;
+    color: rgb(104, 103, 103);
+    font-size: 0.9rem;
+}
+
+.info-text{
+    padding: 3% 0%;
+    font-size: 0.9rem; 
+    color: rgb(104, 103, 103);
+}
+
+/* Vaccination Image  */
+
+.vaccine-img{
+    position: relative;
+    z-index: 1;
+    width: 350px;
 }
