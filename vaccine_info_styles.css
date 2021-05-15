@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin-top: 73px;
     font-family: 'Itim', cursive;
@@ -214,7 +218,7 @@ body {
     padding: 3% 10%;
 }
 
-.news-heading{
+.news-heading {
     padding-bottom: 15px;
 }
 
@@ -249,7 +253,8 @@ body {
     background-color: #f3f4ed;
     text-align: center;
 }
-.statistics{
+
+.statistics {
     padding: 1% 9%;
 }
 
@@ -258,10 +263,11 @@ body {
     border-radius: 5px;
 }
 
-.borders{
-    border-right: 7px solid red; 
+.borders {
+    border-right: 7px solid red;
 }
-.borderless-container{
+
+.borderless-container {
     padding: 30px 20px;
     font-weight: 700;
 }
