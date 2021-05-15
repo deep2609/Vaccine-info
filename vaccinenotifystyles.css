@@ -1,0 +1,44 @@
+body {
+    padding-top: 73px;
+    text-align: center;
+}
+
+.icon {
+    width: 7%;
+    height: 7%;
+}
+
+.brand-logo {
+    font-family: 'Pacifico', cursive;
+    padding-left: 25px;
+    font-size: 1.4rem;
+}
+
+.logo {
+    width: 25%;
+    float: left;
+    padding-right: 10px;
+}
+
+.form {
+    padding: 1% 10%;
+    background-color: #fae8ed;
+    height: auto;
+}
+
+.form-text {
+    padding: 5% 40% 1%;
+}
+
+.form-data {
+    padding: 5% 30% 2%;
+}
+
+select, input {
+    margin-bottom: 12px;
+}
+
+.getnotified{
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
