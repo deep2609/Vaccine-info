@@ -18,6 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Pacifico&family=Ubuntu&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
   <!-- Fonts Awesome Path -->
   <script src="https://kit.fontawesome.com/6ff6c73007.js" crossorigin="anonymous"></script>
 
@@ -38,32 +39,32 @@
     <!-- NavBar Section  -->
 
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand brand-logo" href=""><img src="images/vaccine.png" alt="icon-img" class="icon">
-          Vaccine-info</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav navbar nav-custom ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                More
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Vaccine Availability</a>
-                <a class="dropdown-item" href="#">Vaccine Info</a>
-                <a class="dropdown-item" href="#">Vaccine Schedule</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact-me.html">Contact Us</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <a class="navbar-brand brand-logo" href="home.html"><img src="images/vaccine.png" alt="icon-img" class="icon">
+        Vaccine-info</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav navbar nav-custom ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              More
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Vaccine Availability</a>
+              <a class="dropdown-item" href="#">Vaccine Info</a>
+              <a class="dropdown-item" href="#">Vaccine Schedule</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact-me.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   
     
     <div class="form">
@@ -72,7 +73,7 @@
             <h4 style="padding: 5% 0%;">Vaccine Notify</h4>
         </div>
         <div>
-            <h5>Get notified instantly whenever vaccine near you is available!</h5>
+            <h5 style="color: grey;">Get notified instantly whenever vaccine near you is available!</h5>
         </div>
 
         <!-- Form  -->
@@ -86,7 +87,7 @@
                         <select class="custom-select" name="district" id="district">
                           <option value="no-option">Choose District</option>
                         </select>
-                        <input type="email" class="form-control" id="email" placeholder="Email">
+                        <input type="email" class="form-control" id="email" placeholder="Email" required>
                         <input type="number" class="form-control" id="email" placeholder="Pincode(Optional)">
                         <button id="getnotified" type="submit" class="btn btn-lg btn-success btn-block getnotified">Get Notified</button>
                         OR
@@ -95,10 +96,32 @@
                 </div>
             </form>
         </div>
-        <div style="margin: 0% 30%">Currently supporting instant Email updates.</div>
-        <div style="margin: 0% 30%">Coming soon: Support for SMS, Telegram, Whatsapp.</div>
+        <div class="update-details">Already Registered? <a href="">Update Details</a></div>
+        <div class="info-text">
+          <div>Currently supporting instant Email updates.</div>
+          <div>Coming soon: Support for SMS, Telegram, Whatsapp.</div>
+        </div>
+        <img src="images/vaccination.png" alt="vaccination-img" class="vaccine-img">
     </div>
-    
+
+    <div style="height: 350px; text-align: center; padding: 10% 35%; font-size: 0.9rem;">
+      <div>
+        Can't find your City? Reach out to us in the chatbox on this page
+        and we'll add it right away.
+      </div>
+      <div style="padding-top: 20px;">
+        Not Affiliated with Cowin in any way. For all queries, please write to <a href="mailto:vaccineinfo2021@gmail.com">vaccineinfo2021@gmail.com</a>
+        Take care and stay safe!
+      </div>
+    </div>
+    <!-- Footer  -->
+
+    <footer class="bg-light text-center text-lg-start">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2020 Copyright: <a class="text-dark" href="home.html">Vaccine-Info </a> with ❤ by Souradip and Pranshu
+      </div>
+    </footer>
+
     <script type="text/javascript">
       var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date;
       !function () {
@@ -106,6 +129,7 @@
           t.async = !0, t.src = "https://embed.tawk.to/608ffb0ab1d5182476b5200d/1f4p6pvg1", t.charset = "UTF-8", t.setAttribute("crossorigin", "*"), e.parentNode.insertBefore(t, e)
       }()
   </script>
+  <script src="notify.js"></script>
 </body>
 
 </html>
