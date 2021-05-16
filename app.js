@@ -76,12 +76,18 @@ async function checkAvailability() {
     let userData = await getUserData();
 
     let toBeDeleted=[];
-    userData.forEach(element => {
+    for(let i=0;i<userData.length;i++){
       datesArray.forEach(date => {
-          let ok = getSlotsForDate(date,element);
-          if(ok)toBeDeleted.push(element._id);
+          let ok = getSlotsForDate(date,userData[i]);
+          if(ok)toBeDeleted.push(userData[i]._id);
       });
-    });
+    }
+//     userData.forEach(element => {
+//       datesArray.forEach(date => {
+//           let ok = getSlotsForDate(date,element);
+//           if(ok)toBeDeleted.push(element._id);
+//       });
+//     });
 
     let done = await deleteFoundItems(toBeDeleted);
 
