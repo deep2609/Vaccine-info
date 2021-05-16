@@ -18,7 +18,7 @@ app.get("/",function(req,res){
 });
 
 app.get("/notify",function(req,res){
-  res.sendFile("C:\Users\shantanupc\main-project\Vaccine-info-main\vaccinenotify.html");
+  res.sendFile(__dirname+"/vaccinenotify.html");
 })
 // var PINCODE = '203001';
 // const AGE = 45;
