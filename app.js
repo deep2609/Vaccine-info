@@ -31,8 +31,14 @@ app.get("/vaccine-info", function (req, res) {
     res.sendFile(__dirname + "/public/html/vaccine_info.html");
 })
 
-// var PINCODE = '203001';
-// const AGE = 45;
+app.post("/success",function(req,res){
+  res.redirect("/");
+})
+
+app.post("/failure",function(req,res){
+  res.redirect("/notify");
+})
+
 
 app.post('/post-feedback', function (req, res) {
 
@@ -40,12 +46,11 @@ app.post('/post-feedback', function (req, res) {
         var db = client.db('test');
         delete req.body._id; // for safety reasons
         db.collection('data').insertOne(req.body);
-        //xyz=db;
+
     });
-    //res.send('Data received:\n' + JSON.stringify(req.body));
-    //console.log(xyz);
+
     console.log(JSON.stringify(req.body));
-    res.send("<h1>Done</h1>");
+    res.sendFile(__dirname + "/public/html/successfulRegistration.html");
 });
 
 async function main() {
@@ -71,34 +76,11 @@ async function checkAvailability() {
 
     if(typeof userData !== 'undefined'){
       for(let i=0;i<userData.length;i++){
-        // console.log(typeof(userData[i]._id));
-        // console.log(deleteIds.has(userData[i]._id));
 
-        // let index = deletedIds.prototype.findIndex(function(element){
-        //   return element === userData[i];
-        // });
-        // if(index>-1){
-        //   deletedIds.splice(index,1);
-        //   continue;
-        // }else{
-        //   datesArray.forEach(date =>{
-        //     let ok = getSlotsForDate(date,userData[i]);
-        //     // if(ok)toBeDeleted.push(userData[i]._id);
-        //   });
-        // }
-        // if(deletedIds.has(userData[i]._id)){
-        //   deletedIds.delete(userData[i]._id);
-        //   continue;
-        // }else{
-        //   datesArray.forEach(date =>{
-        //     let ok = getSlotsForDate(date,userData[i]);
-        //     // if(ok)toBeDeleted.push(userData[i]._id);
-        //   });
-        // }
 
         datesArray.forEach(date =>{
             let ok = getSlotsForDate(date,userData[i]);
-            // if(ok)toBeDeleted.push(userData[i]._id);
+            
           });
       }
     }
@@ -178,6 +160,40 @@ function getSlotsForDate(DATE, element) {
 
 async function notifyMe(validSlots, email) {
     let slotDetails = JSON.stringify(validSlots, null, '\t');
+    //console.log(validSlots[0]);
+    let html=`<table style="border-collapse: collapse; width: 75%;">
+    <thead style=" padding-top: 12px; padding-bottom: 12px; text-align: center; background-color: #009879; color: white; ">
+        <th style="border: 1px solid #ddd; padding: 8px;">Centre Name</th>
+        <th style="border: 1px solid #ddd; padding: 8px;">Vaccine</th>
+        <th style="border: 1px solid #ddd; padding: 8px;">Address</th>
+        <th style="border: 1px solid #ddd; padding: 8px;">PinCode</th>
+        <th style="border: 1px solid #ddd; padding: 8px;">Date</th>
+        <th style="border: 1px solid #ddd; padding: 8px;">Availability Dose 1</th>
+        <th style="border: 1px solid #ddd; padding: 8px;">Availability Dose 2</th>
+        <th style="border: 1px solid #ddd; padding: 8px;">Minimum Age</th>
+        <th style="border: 1px solid #ddd; padding: 8px;">Fee Type</th>
+    </thead>
+    <tbody id='data-body'>`;
+
+
+
+   for(let i=0;i<validSlots.length;i++){
+     for(let j=0;j<validSlots[i].sessions.length;j++){
+       html+=`<tr style=" padding-top: 12px; padding-bottom: 12px; text-align: center;">`;
+       html+=`<td style="border: 1px solid #ddd; padding: 8px;">`+validSlots[i].name+`</td>`;
+       html+=`<td style="border: 1px solid #ddd; padding: 8px;">`+validSlots[i].sessions[j].vaccine+`</td>`;
+       html+=`<td style="border: 1px solid #ddd; padding: 8px;">`+validSlots[i].address+`</td>`;
+       html+=`<td style="border: 1px solid #ddd; padding: 8px;">`+validSlots[i].pincode+`</td>`;
+       html+=`<td style="border: 1px solid #ddd; padding: 8px;">`+validSlots[i].sessions[j].date+`</td>`;
+       html+=`<td style="border: 1px solid #ddd; padding: 8px;">`+validSlots[i].sessions[j].available_capacity_dose1+`</td>`;
+       html+=`<td style="border: 1px solid #ddd; padding: 8px;">`+validSlots[i].sessions[j].available_capacity_dose2+`</td>`;
+       html+=`<td style="border: 1px solid #ddd; padding: 8px;">`+validSlots[i].sessions[j].min_age_limit+`</td>`;
+       html+=`<td style="border: 1px solid #ddd; padding: 8px;">`+validSlots[i].fee_type+`</td>`;
+       html+=`</tr>`;
+     }
+   }
+   html+=`</tbody>;`
+html+=`</table>`
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -190,8 +206,15 @@ async function notifyMe(validSlots, email) {
         from: 'vaccineinfo2021@gmail.com',
         to: email,
         subject: 'Vaccine Available-Hurry Up! Book Fast',
-        text: 'Following Slots are Available Right now! Please Book Fast otherwise it would be filled immediately\n' + slotDetails,
+        html: html
+
+
     };
+
+
+
+        // text:'Following Slots are Available Right now! Please Book Fast otherwise it would be filled immediately\n' + slotDetails,
+
 
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
