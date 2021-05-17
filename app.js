@@ -149,7 +149,7 @@ async function notifyMe(validSlots,email) {
         service: 'gmail',
         auth: {
             user: 'vaccineinfo2021@gmail.com',
-            pass: 'Notify2021'
+            pass: ''
         }
     });
 
