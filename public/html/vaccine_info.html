@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaccine-info</title>
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/vaccine_info_styles.css">
+
+  <!-- Animation Files  -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Pacifico&family=Ubuntu&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+
+  <!-- Fonts Awesome Path -->
+  <script src="https://kit.fontawesome.com/6ff6c73007.js" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/Favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/Favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/Favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/Favicon/site.webmanifest">
+
+  <!-- Chart.js Scripts  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+</head>
+
+<body>
+  <!-- Navbar Section  -->
+
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand brand-logo" href="/"><img src="assets/images/vaccine.png" alt="icon-img" class="icon">
+      Vaccine-info</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav navbar nav-custom ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.cowin.gov.in/home">CO-WIN</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#covaxin">COVAXIN</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#covishield">COVISHIELD</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contactus">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- Covid Statsitics -->
+
+  <div class="covid-stats">
+    <div>
+        <h1><i class="far fa-chart-bar"></i> COVID-19 Live Statistics: </h1>
+    </div>
+    <div style="padding-top: 10px;">
+        <h3><img src="assets/images/flag.svg" alt="indian-flag" class="flag"> India</h3>
+    </div>
+
+     <div class="row">
+        <div class="col-lg-6"> 
+            <!-- Displaying Chart -->
+            <canvas id="myChart" style="width:650px;max-width:650px"></canvas>
+          </div>
+    
+          <div class="col-lg-6">
+              <!-- Displaying Chart -->
+            <canvas id="myChart1" style="width:650px;max-width:650px"></canvas>
+          </div>
+     </div>
+
+    <div class="statistics">
+        <div class="row">
+
+            <div class="col-lg-4 col-md-4 col-sm-6 borderless-container borders">
+                <span id="totalCases" style="color: brown;">Total Cases</span> 
+                <span id="newCases" style="color: grey;">(+ )</span>
+                <div style="padding-top: 10px;">Confirmed</div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 borderless-container borders">
+                <span id="totalDeaths">Total Deaths</span> 
+                <span id="newDeaths" style="color: grey;">(+ )</span>
+                <div style="padding-top: 10px;">Deaths</div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 borderless-container">
+                <span id="recovered" style="color: forestgreen;">Recovered</span>
+                <span id="newRecovered" style="color: grey;">()</span> 
+                <div style="padding-top: 10px;">Recovered</div>
+            </div>
+        </div>
+    </div>
+    <div style="padding-top: 10px; color: grey;">Last Updated: <span id="update" style="font-weight: 700; color: black;">Time</span></div>
+</div>
+
+
+  <!-- Covaxin -->
+  <div class="covaxin" id="covaxin">
+     <h1 data-aos='fade-right' style="border-left: 10px solid #54e346;padding: 10px 20px;font-weight: 700;">COVAXIN</h1>
+
+   <div class="row feature-button">
+
+     <div class="col-6">
+       <center>
+         <strong><h3>About the vaccine</h3></strong>
+         </center>
+       <img data-aos='fade-right' class="spacing-1" src="assets/images/covaxin.jpg" style="height:250px;width:250px;border-radius:100%;"alt="">
+       <div class="spacing-1">
+          <ul>
+            <li style="text-align:left;" class="list"><a href="https://www.bharatbiotech.com/covaxin.html">COVAXIN</a>, India's indigenous COVID-19 vaccine by <a href="https://www.bharatbiotech.com/">Bharat Biotech</a> is developed in collaboration with the <a href="https://www.icmr.gov.in/">Indian Council of Medical Research (ICMR)</a> - National Institute of Virology (NIV).</li>
+            <li style="text-align:left;" class="list">Covaxin is an inactivated vaccine which means that it is made up of killed coronaviruses, making it safe to be injected into the body.</li>
+            <li style="text-align:left;" class="list">The two doses are given four weeks apart. The vaccine can be stored at 2°C to 8°C.</li>
+          </ul>
+
+       </div>
+     </div>
+     <div class="col-6">
+         <h3>Effectiveness</h3>
+
+       <div class="spacing-2">
+         <ul>
+           <li style="text-align:left;" class="list"><a href="https://www.icmr.gov.in/pdf/press_realease_files/Press_Release_ICMR_03_March_2021.pdf">Phase 3 results of the COVAXIN</a>, developed by Indian Council of Medical Research (ICMR) in partnership with Bharat BiotechInternational Limited (BBIL),has shown an interim vaccine efficacy of 81% in preventing Covid-19.</li>
+           <li style="text-align:left;" class="list">In an ongoing clinical trial, COVAXIN has been shown to generate immunity following 2 doses given 4 weeks apart.</li>
+           <li style="text-align:left;" class="list">COVAXIN’s ability to neutralize UK variant strain of SARS-CoV-2 has also recently been established..</li>
+
+         </ul>
+       </div>
+       <h3>Pricing</h3>
+       <div class="spacing-2">
+         <ul>
+           <li style="text-align:left;" class="list">On April 29, <a href="https://www.indiatvnews.com/news/india/bharat-biotech-covaxin-coronavirus-vaccine-direct-supply-covid19-703666">Bharat Biotech announced a cut in the price of 'Covaxin' for states to Rs 400 per dose</a> from the earlier Rs 600 per dose.</li>
+           <li style="text-align:left;" class="list">The company is supplying vaccines to Andhra Pradesh, Assam, Chhattisgarh, Gujarat, Jammu & Kashmir, Jharkhand, Madhya Pradesh, Odisha, Tamil Nadu, Telangana, Uttar Pradesh and West Bengal.</li>
+         </ul>
+       </div>
+
+     </div>
+
+   </div>
+
+
+
+  </div>
+
+  <!-- Covishield -->
+  <div class="covishield" id="covishield">
+      <h1 data-aos='fade-right' style="border-left: 10px solid #54e346;
+      padding: 10px 20px;
+      font-weight: 700;">COVISHIELD</h1>
+
+      <div class="row feature-button">
+
+        <div class="col-6">
+          <center>
+            <strong><h3>About the vaccine</h3></strong>
+            </center>
+          <img data-aos='fade-right' class="spacing-1" src="assets/images/covishield.jpg" style="height:250px;width:250px;border-radius:100%;"alt="">
+          <div class="spacing-1">
+             <ul>
+               <li style="text-align:left;" class="list">The <a href="https://en.wikipedia.org/wiki/Oxford%E2%80%93AstraZeneca_COVID-19_vaccine">Oxford–AstraZeneca</a> COVID-19 vaccine, and sold under the brand names Covishield and Vaxzevria</li>
+               <li style="text-align:left;" class="list">Developed by Oxford University and AstraZeneca, it is given by intramuscular injection, using as a vector the modified chimpanzee adenovirus <a href="https://en.wikipedia.org/wiki/ChAdOx1">ChAdOx1.</a></li>
+               <li style="text-align:left;" class="list">The vaccine has a good safety profile, with side effects including injection-site pain, headache, and nausea, all generally resolving within a few days</li>
+             </ul>
+
+          </div>
+        </div>
+        <div class="col-6">
+            <h3>Effectiveness</h3>
+
+          <div class="spacing-2">
+            <ul>
+              <li style="text-align:left;" class="list"><a href="https://www.who.int/news-room/feature-stories/detail/the-oxford-astrazeneca-covid-19-vaccine-what-you-need-to-know">Based on data provided by the manufacturer, the Astrazeneca-Oxford vaccine</a>, or AZD1222, has shown to be 63% effective in an ongoing, large-scale clinical trial.</li>
+              <li style="text-align:left;" class="list">In ongoing clinical trials, the COVISHIELD Vaccine has been shown to prevent COVID-19 disease following 2 doses given between 4 and 12 weeks apart.</li>
+              <li style="text-align:left;" class="list">You may get protective immune response 4 weeks after the second dose of COVISHIELD vaccine.</li>
+            </ul>
+          </div>
+          <h3>Pricing</h3>
+          <div class="spacing-2">
+            <ul>
+              <li style="text-align:left;" class="list">From May 1, Serum Institute of India priced its vaccine Covishield at <a href="https://www.indiatoday.in/coronavirus-outbreak/story/serum-institute-fixes-covishield-price-at-rs-600-for-pvt-hospitals-rs-400-for-state-govts-1793389-2021-04-21">Rs 400 per dose for the central and state governments and Rs 600 per dose</a> for private hospitals.</li>
+              <li style="text-align:left;" class="list">According to <a href="https://timesofindia.indiatimes.com/india/at-rs700-rs1500-price-of-covid-vaccine-in-indias-private-sector-among-costliest/articleshow/82509814.cms">Times of India</a>, the Covishield manufactured by the Serum Institute of India ranges from Rs 700-900 per Dose at Private Hospitals</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+  <!-- Related-NEWS -->
+  <div class="NEWS">
+    <div style="padding-bottom: 2%;">
+      <h1 data-aos='fade-right' style="border-left: 10px solid #54e346; padding: 10px 20px; font-weight: 700;">Related NEWS</h1>
+    </div>
+
+    <div id="relatednews" style="overflow-y: scroll; height: 250px" class="scrollbar-success">
+        <!-- News Headings will be Updated Here  -->
+        <ul class="newsList">
+              <!-- Breaking News Will be Updated Here  -->
+        </ul>
+    </div>
+  </div>
+
+  <!-- JavaScript Code  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="js/newsapi.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      mirror: true,
+      easing: 'ease-in-out'
+    });
+  </script>
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date;
+    !function () {
+        var t = document.createElement("script"), e = document.getElementsByTagName("script")[0];
+        t.async = !0, t.src = "https://embed.tawk.to/608ffb0ab1d5182476b5200d/1f4p6pvg1", t.charset = "UTF-8", t.setAttribute("crossorigin", "*"), e.parentNode.insertBefore(t, e)
+    }()
+</script>
+</body>
+<!-- Footer -->
+<footer class="bg-light text-center text-lg-start">
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2020 Copyright: <a class="text-dark" href="/">Vaccine-Info </a> with ❤ by Souradip and Pranshu
+  </div>
+</footer>
+
+</html>
