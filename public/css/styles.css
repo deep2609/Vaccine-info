@@ -1,0 +1,379 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin-top: 73px;
+}
+
+.section-heading {
+  border-left: 10px solid orange;
+  padding: 10px 20px;
+  font-weight: 700;
+}
+
+/* Navbar  */
+.icon {
+  width: 7%;
+  height: 7%;
+}
+
+.brand-logo {
+  font-family: 'Pacifico', cursive;
+  padding-left: 25px;
+  font-size: 1.4rem;
+}
+
+/* About Section  */
+
+.about {
+  height: auto;
+  padding: 3% 10% 5% 10%;
+}
+
+/* Carousel  */
+
+.slider-diplay {
+  padding-left: 8%;
+}
+
+/* Vaccine Data */
+
+.vaccine-data {
+  text-align: center;
+  padding: 3% 10% 0%;
+}
+
+.stats {
+  padding: 3%;
+}
+
+/* Features Section  */
+
+.feature {
+  padding: 5% 10% 7%;
+  height: auto;
+  background-color: #faf2da;
+  font-family: 'Ubuntu', sans-serif;
+  height: auto;
+}
+
+.feature-button {
+  text-align: center;
+  padding-top: 3%;
+}
+
+.feature-img {
+  height: 75%;
+  width: 70%;
+}
+
+.text-spacing {
+  padding-top: 5%;
+}
+
+/* Vaccine Availability Form */
+
+.search-toggle {
+  display: none;
+  padding-top: 7%;
+}
+
+.form-elements,
+#checkAvailability {
+  margin-top: 3%;
+}
+
+/* Availability Results */
+
+.results {
+  padding: 3% 5% 0%;
+  height: auto;
+}
+
+
+/* .dtHorizontalVerticalExampleWrapper {
+  max-width: 600px;
+  margin: 0 auto;
+} */
+
+.table-class {
+  padding-top: 3%;
+  padding-bottom: 2%;
+}
+
+.table-responsive {
+  max-height: 500px;
+  max-width: 1100px;
+}
+
+.fixTableHead {
+  overflow-y: auto;
+  height: auto;
+}
+
+.fixTableHead thead th {
+  position: sticky;
+  top: 0;
+}
+
+th {
+  background: #ABDD93;
+}
+
+hr {
+  border-style: dotted none none none;
+  width: 30%;
+  border-width: 15px;
+  border-color: gray;
+}
+
+/* Scroll Bar  */
+
+.scrollbar-secondary::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-color: #F5F5F5;
+  border-radius: 10px;
+}
+
+.scrollbar-secondary::-webkit-scrollbar {
+  width: 12px;
+  background-color: #F5F5F5;
+}
+
+.scrollbar-secondary::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-color: #aa66cc;
+}
+
+.scrollbar-secondary {
+  scrollbar-color: #aa66cc #F5F5F5;
+}
+
+
+
+/* Guidelines Section */
+
+.guidelines {
+  font-family: 'Ubuntu', sans-serif;
+  padding: 3% 10% 0%;
+  height: auto;
+}
+
+.card-image {
+  padding-bottom: 5%;
+}
+
+.guidelines-cards{
+  padding: 3%;
+}
+
+/* CoronaVirus Information Section (Do's & Don't) */
+
+.info {
+  font-family: 'Ubuntu', sans-serif;
+  padding: 3% 10%;
+  height: auto;
+  background-color: rgb(21, 79, 240);
+}
+
+.info-img {
+  height: 100%;
+  width: 15%;
+  border-radius: 100%;
+  float: left;
+  margin-left: 15%;
+}
+
+.wrap-text {
+  padding: 2% 0% 2% 10%;
+  margin-left: 30%;
+}
+
+#wraptext-heading1 {
+  color: #fff;
+  font-size: 3rem;
+}
+
+#wraptext-heading2 {
+  color: yellow;
+}
+
+/* CSS FelxBox for Do's and Dont's  */
+.flexbox {
+  background-color: #FFFDD0;
+  padding: 3% 12% 3%;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-child {
+  flex: 1;
+  height: auto;
+  border-radius: 25px;
+}
+
+.flex-child:nth-child(1) {
+  background-color: orange;
+  margin-right: 20px;
+}
+
+.flex-child2 {
+  border-radius: 25px;
+  background-color: lightgreen;
+}
+
+.flex-child3 {
+  background-color: violet;
+  height: auto;
+  text-align: center;
+  color: #fff;
+  padding-bottom: 5px;
+  border-radius: 25px;
+}
+
+.do-title {
+  background-color: #CC5500;
+  height: 40px;
+  text-align: center;
+  color: #fff;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.dont-title {
+  background-color: green;
+  height: 40px;
+  text-align: center;
+  color: #fff;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.do-dont-info {
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.do-dont-info li {
+  padding: 3%;
+  color: white;
+  font-size: 1.3rem;
+}
+
+/* Profile Card Section  */
+
+.profile-container {
+  padding: 3% 10% 2%;
+}
+
+.profile-cards {
+  padding: 3% 20% 0%;
+  height: auto;
+}
+
+.our-team {
+  padding: 30px 0 40px;
+  margin-bottom: 30px;
+  background-color: #f7f5ec;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  height: 400px;
+}
+
+.our-team .picture {
+  display: inline-block;
+  height: 130px;
+  width: 130px;
+  margin-bottom: 50px;
+  z-index: 1;
+  position: relative;
+}
+
+.our-team .picture::before {
+  content: "";
+  width: 100%;
+  height: 0;
+  border-radius: 50%;
+  background-color: #1369ce;
+  position: absolute;
+  bottom: 135%;
+  right: 0;
+  left: 0;
+  opacity: 0.9;
+  transform: scale(3);
+  transition: all 0.3s linear 0s;
+}
+
+.our-team:hover .picture::before {
+  height: 100%;
+}
+
+.our-team .picture::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #1369ce;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.our-team .picture img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  transform: scale(1);
+  transition: all 0.9s ease 0s;
+}
+
+.our-team:hover .picture img {
+  box-shadow: 0 0 0 14px #f7f5ec;
+  transform: scale(0.7);
+}
+
+.our-team .title {
+  display: block;
+  font-size: 15px;
+  color: #4e5052;
+  text-transform: capitalize;
+}
+
+.our-team .social {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #1369ce;
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+  transition: all 0.5s ease 0s;
+}
+
+.our-team:hover .social {
+  bottom: 0;
+}
+
+.our-team .social li {
+  display: inline-block;
+}
+
+.our-team .social li a {
+  display: block;
+  padding: 10px;
+  font-size: 17px;
+  color: white;
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+}
+
+.our-team .social li a:hover {
+  color: #1369ce;
+  background-color: #f7f5ec;
+}
