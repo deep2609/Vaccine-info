@@ -33,9 +33,29 @@ body {
 
 /* Carousel  */
 
-.slider-diplay {
+/* .slider-diplay {
   padding-left: 8%;
+} */
+
+.mobile-size{
+  padding-top: 10%;
+  padding-left: 0;
 }
+
+.tab-size{
+  padding-top: 10%;
+  padding-left: 0;
+}
+.ipad-size{
+  padding-top: 10%;
+  padding-left: 0;
+}
+.small-size{
+  padding-top: 10%;
+  padding-left: 0;
+}
+
+
 
 /* Vaccine Data */
 
@@ -55,7 +75,7 @@ body {
   height: auto;
   background-color: #faf2da;
   font-family: 'Ubuntu', sans-serif;
-  height: auto;
+
 }
 
 .feature-button {
@@ -72,11 +92,32 @@ body {
   padding-top: 5%;
 }
 
+
+
+@media only screen and (max-width: 826px) {
+    .feature-1 img{
+      width: 50%;
+      height: 57%;
+
+    }
+
+    .feature-2 img{
+      width: 50%;
+      height: 57%;
+
+    }
+
+    .feature-3 img{
+      width: 50%;
+      height: 57%;
+
+    }
+}
 /* Vaccine Availability Form */
 
 .search-toggle {
   display: none;
-  padding-top: 7%;
+  padding-top: 13%;
 }
 
 .form-elements,
@@ -160,6 +201,12 @@ hr {
   padding: 3% 10% 0%;
   height: auto;
 }
+.guidelines-cards{
+  font-family: 'Goblin One', cursive;
+  font-size: 3.5rem;
+  padding: 3% 10% 0%;
+  height: auto;
+}
 
 .card-image {
   padding-bottom: 5%;
@@ -168,6 +215,7 @@ hr {
 .guidelines-cards{
   padding: 3%;
 }
+
 
 /* CoronaVirus Information Section (Do's & Don't) */
 
