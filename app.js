@@ -55,7 +55,7 @@ app.post('/post-feedback', function (req, res) {
 
 async function main() {
     try {
-        cron.schedule('* * * * *', async () => {
+        cron.schedule('0 0 */6 * * *', async () => {
             checkAvailability();
         });
     } catch (e) {
@@ -80,7 +80,7 @@ async function checkAvailability() {
 
         datesArray.forEach(date =>{
             let ok = getSlotsForDate(date,userData[i]);
-            
+
           });
       }
     }
@@ -179,6 +179,7 @@ async function notifyMe(validSlots, email) {
 
    for(let i=0;i<validSlots.length;i++){
      for(let j=0;j<validSlots[i].sessions.length;j++){
+       if(validSlots[i].sessions[j].available_capacity===0)continue;
        html+=`<tr style=" padding-top: 12px; padding-bottom: 12px; text-align: center;">`;
        html+=`<td style="border: 1px solid #ddd; padding: 8px;">`+validSlots[i].name+`</td>`;
        html+=`<td style="border: 1px solid #ddd; padding: 8px;">`+validSlots[i].sessions[j].vaccine+`</td>`;
@@ -198,7 +199,7 @@ html+=`</table>`
         service: 'gmail',
         auth: {
             user: 'vaccineinfo2021@gmail.com',
-            pass: 'Noti'
+            pass: 'Notify2021'
         }
     });
 
