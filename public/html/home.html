@@ -16,6 +16,8 @@
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
+  
+<link href="https://fonts.googleapis.com/css2?family=Goblin+One&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Pacifico&family=Ubuntu&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
   <!-- Fonts Awesome Path -->
@@ -35,6 +37,30 @@
   <!-- Carousel File Links  -->
   <link rel="stylesheet" href="css/slider.css"/>
   <script src="js/slider.js"></script>
+      <!-- for screensize mobile size -->
+      <link rel="stylesheet" href="css/slider-500.css"/>
+      <script src="js/slider-500.js"></script>
+
+      <!-- for tab size -->
+      <link rel="stylesheet" href="css/slider-700.css"/>
+      <script src="js/slider-700.js"></script>
+
+      <!-- for ipad -->
+      <link rel="stylesheet" href="css/slider-900.css"/>
+      <script src="js/slider-900.js"></script>
+
+      <!-- for very small screen -->
+      <link rel="stylesheet" href="css/slider-300.css"/>
+      <script src="js/slider-300.js"></script>
+
+
+      <!-- <script src="js/sliders_visibility.js"></script> -->
+
+
+
+
+
+
 
 </head>
 
@@ -85,16 +111,71 @@
     <div class="about">
 
       <!-- Carousel -->
-      <div class="slider-diplay">
-        <div class="ism-slider" data-transition_type="zoom" id="my-slider">
-          <ol>
-            <li><img src="assets/images/english-text.png"></li>
-            <li><img src="assets/images/carousel-img.png"></li>
-            <li><img src="assets/images/hindi-text.png"></li>
-            <li><img src="assets/images/carousel-img.png"></li>
-          </ol>
+      <center>
+        <div class="slider-diplay desktop-size">
+          <div class="ism-slider" data-transition_type="zoom" id="my-slider">
+            <ol>
+              <li><img src="assets/images/english-text.png"></li>
+              <li><img src="assets/images/carousel-img.png"></li>
+              <li><img src="assets/images/hindi-text.png"></li>
+              <li><img src="assets/images/carousel-img.png"></li>
+            </ol>
+          </div>
         </div>
-      </div>
+      </center>
+
+   <center>
+     <div class="slider-diplay mobile-size">
+       <div class="ism-slider" data-transition_type="zoom" id="my-slider-1">
+         <ol>
+           <li><img src="assets/images/english-text.png"></li>
+           <li><img src="assets/images/carousel-img.png"></li>
+           <li><img src="assets/images/hindi-text.png"></li>
+           <li><img src="assets/images/carousel-img.png"></li>
+         </ol>
+       </div>
+     </div>
+   </center>
+
+   <center>
+     <div class="slider-diplay tab-size">
+       <div class="ism-slider" data-transition_type="zoom" id="my-slider-2">
+         <ol>
+           <li><img src="assets/images/english-text.png"></li>
+           <li><img src="assets/images/carousel-img.png"></li>
+           <li><img src="assets/images/hindi-text.png"></li>
+           <li><img src="assets/images/carousel-img.png"></li>
+         </ol>
+       </div>
+     </div>
+   </center>
+
+   <center>
+     <div class="slider-diplay ipad-size">
+       <div class="ism-slider" data-transition_type="zoom" id="my-slider-3">
+         <ol>
+           <li><img src="assets/images/english-text.png"></li>
+           <li><img src="assets/images/carousel-img.png"></li>
+           <li><img src="assets/images/hindi-text.png"></li>
+           <li><img src="assets/images/carousel-img.png"></li>
+         </ol>
+       </div>
+     </div>
+   </center>
+
+   <center>
+     <div class="slider-diplay small-size">
+       <div class="ism-slider" data-transition_type="zoom" id="my-slider-4">
+         <ol>
+           <li><img src="assets/images/english-text.png"></li>
+           <li><img src="assets/images/carousel-img.png"></li>
+           <li><img src="assets/images/hindi-text.png"></li>
+           <li><img src="assets/images/carousel-img.png"></li>
+         </ol>
+       </div>
+     </div>
+   </center>
+
 
       <!-- Vaccine Statistics  -->
       <div class="vaccine-data">
@@ -103,15 +184,15 @@
         <h4 style="padding: 2% 0%;">📈 Live Vaccination statistics</h4>
 
         <div class="row">
-          <div class="col-lg-4 stats" style="border-right: 5px solid red;">
+          <div class="col-lg-4 col-md-12 col-sm-12 stats border border-danger" style="border-right: 5px solid red;">
             <h5 id="newVaccinations" style="color: green; padding-bottom: 4%;"></h5>
             <h5>New Vaccinations</h5>
           </div>
-          <div class="col-lg-4 stats" style="border-right: 5px solid red;">
+          <div class="col-lg-4 col-md-12 col-sm-12 stats border border-danger" style="border-right: 5px solid red;">
             <h5 id="totalVaccinated" style="padding-bottom: 4%;"></h5>
             <h5>Total Vaccinated</h5>
           </div>
-          <div class="col-lg-4 stats">
+          <div class="col-lg-4 col-md-12 col-sm-12 stats border border-danger">
             <h5 id="peopleFullyVaccinated" style="padding-bottom: 4%;"></h5>
             <h5>Fully Vaccinated</h5>
           </div>
@@ -132,23 +213,23 @@
 
       <div class="row feature-button">
 
-        <div class="col-lg-4 col-md-12 col-sm-12" id="vaccine-availability">
+        <div class="col-lg-4 col-md-12 col-sm-12 feature-1" id="vaccine-availability">
           <img data-aos='fade-right' src="assets/images/availability_img.png" alt="" class="feature-img">
           <div class="text-spacing">
-            <p>Check the availability of vaccine in your state/district. If available, you can continue on to book an appointment.</p>
+            <p>Check the availability of vaccine in your state/district.You can continue on to book an appointment from Cowin website.</p>
           </div>
-          <button type="button" class="btn btn-lg btn-success" onclick="togglefunction()">Check Vaccine Availability</button>
+          <a href="#search-form"><button type="button" class="btn btn-lg btn-success checkAvailabilityButton" onclick="togglefunction()">Check Availability</button></a>
         </div>
 
-        <div class="col-lg-4 col-md-12 col-sm-12">
+        <div class="col-lg-4 col-md-12 col-sm-12 feature-2">
           <img data-aos='fade-down' src="assets/images/schedule_img.jpg" alt="" class="feature-img">
           <div class="text-spacing">
-            <p>Schedule an appointment. If there is no available vaccine currently in your area, we will notify you as and when the vaccines will be available.</p>
+            <p>If there is no available vaccine currently in your area, we will notify you as and when the vaccines will be available.</p>
           </div>
-          <button type="button" class="btn btn-lg btn-success" onclick="location.href='/notify'">Schedule Appointment</button>
+          <button type="button" class="btn btn-lg btn-success" onclick="location.href='/notify'">Get Notified</button>
         </div>
 
-        <div class="col-lg-4 col-md-12 col-sm-12">
+        <div class="col-lg-4 col-md-12 col-sm-12 feature-3">
           <img data-aos='fade-left' src="assets/images/info_img.png" alt="" class="feature-img">
           <div class="text-spacing">
             <p>Check out the type of vaccines made available by the indian government. Find all the information about them.</p>
@@ -157,10 +238,10 @@
         </div>
 
       </div>
-      
+
       <!-- Search Section  -->
 
-      <div class="search-toggle">
+      <div id="search-form" class="search-toggle">
 
         <div class="row">
           <h5 class="col-12" style="padding-bottom: 1%; color: grey;">Check your nearest vaccination center and slots availability</h5>
@@ -191,7 +272,7 @@
                   <input type="text" name="pincode" id="pin">
                 </div>
               </div>
-              <button id="checkAvailability" type="button" class="btn btn-lg btn-dark">Search Slots</button>
+              <a href="#availabilityOutput"><button id="checkAvailability" type="button" class="btn btn-lg btn-dark">Search Slots</button></a>
             </form>
           </div>
         </div>
@@ -233,7 +314,7 @@
 
     <section id="Covid-Guidelines">
       <div class="guidelines">
-        
+
         <h1 data-aos='fade-right' class="section-heading">COVID Guidelines</h1>
 
         <div class="row guidelines-cards">
@@ -242,9 +323,10 @@
             <div class="card">
               <div class="card-body">
                 <img class="card-img-top card-image" src="assets/images/pic-1.jpeg" alt="Card image cap">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+
+                  <center>
+                    <h5 class="card-title">AS THEY SAY,</h5>
+                  </center>
               </div>
             </div>
           </div>
@@ -253,9 +335,10 @@
             <div class="card">
               <div class="card-body">
                 <img class="card-img-top card-image" src="assets/images/pic-2.jpeg" alt="Card image cap">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+
+                  <center>
+                    <h5 class="card-title">PREVENTION IS BETTER</h5>
+                  </center>
               </div>
             </div>
           </div>
@@ -264,9 +347,10 @@
             <div class="card">
               <div class="card-body">
                 <img class="card-img-top card-image" src="assets/images/pic-3.jpeg" alt="Card image cap">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <center>
+                  <h5 class="card-title">THAN CURE!!</h5>
+                </center>
+
               </div>
             </div>
           </div>
@@ -341,7 +425,7 @@
     <section id="profilecard">
       <div class="profile-container">
         <h1 data-aos='fade-right' class="section-heading">About US</h1>
-      
+
         <div class="container profile-cards">
           <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-lg-6">
@@ -363,7 +447,7 @@
                 </ul>
               </div>
             </div>
-  
+
             <div class="col-12 col-sm-12 col-md-12 col-lg-6">
               <div class="our-team">
                 <div class="picture">
@@ -385,7 +469,7 @@
             </div>
           </div>
         </div>
-      </div>        
+      </div>
     </section>
 
     <!-- Footer  -->
@@ -397,6 +481,7 @@
     </footer>
 
     <!-- JavaScript Files  -->
+    <script src="js/sliders_visibility.js"></script>
     <script src="js/script.js"></script>
     <script src="js/vaccination-doses.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
