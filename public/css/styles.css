@@ -25,6 +25,7 @@ body {
 }
 
 /* About Section  */
+
 .about {
   height: auto;
   padding: 3% 10% 5% 10%;
@@ -39,15 +40,22 @@ body {
 /* Vaccine Data */
 
 .vaccine-data {
-  padding: 1% 10%;
+  text-align: center;
+  padding: 3% 10% 0%;
+}
+
+.stats {
+  padding: 3%;
 }
 
 /* Features Section  */
+
 .feature {
-  padding: 5% 10%;
-  height: 845px;
+  padding: 5% 10% 7%;
+  height: auto;
   background-color: #faf2da;
   font-family: 'Ubuntu', sans-serif;
+  height: auto;
 }
 
 .feature-button {
@@ -55,27 +63,44 @@ body {
   padding-top: 3%;
 }
 
-.spacing-1 {
-  margin-top: 42px;
+.feature-img {
+  height: 75%;
+  width: 70%;
 }
 
-.spacing-2 {
-  margin-top: 15px;
+.text-spacing {
+  padding-top: 5%;
 }
 
-.spacing-3 {
-  margin-top: 31px;
+/* Vaccine Availability Form */
+
+.search-toggle {
+  display: none;
+  padding-top: 7%;
+}
+
+.form-elements,
+#checkAvailability {
+  margin-top: 3%;
 }
 
 /* Availability Results */
+
 .results {
-  height: 700px;
+  padding: 3% 5% 0%;
+  height: auto;
 }
+
 
 /* .dtHorizontalVerticalExampleWrapper {
   max-width: 600px;
   margin: 0 auto;
 } */
+
+.table-class {
+  padding-top: 3%;
+  padding-bottom: 2%;
+}
 
 .table-responsive {
   max-height: 500px;
@@ -84,7 +109,7 @@ body {
 
 .fixTableHead {
   overflow-y: auto;
-  height: 500px;
+  height: auto;
 }
 
 .fixTableHead thead th {
@@ -96,19 +121,56 @@ th {
   background: #ABDD93;
 }
 
+hr {
+  border-style: dotted none none none;
+  width: 30%;
+  border-width: 15px;
+  border-color: gray;
+}
+
+/* Scroll Bar  */
+
+.scrollbar-secondary::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-color: #F5F5F5;
+  border-radius: 10px;
+}
+
+.scrollbar-secondary::-webkit-scrollbar {
+  width: 12px;
+  background-color: #F5F5F5;
+}
+
+.scrollbar-secondary::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-color: #aa66cc;
+}
+
+.scrollbar-secondary {
+  scrollbar-color: #aa66cc #F5F5F5;
+}
+
+
 
 /* Guidelines Section */
+
 .guidelines {
   font-family: 'Ubuntu', sans-serif;
-  padding: 3% 10%;
-  height: 700px;
+  padding: 3% 10% 0%;
+  height: auto;
 }
 
 .card-image {
   padding-bottom: 5%;
 }
 
+.guidelines-cards{
+  padding: 3%;
+}
+
 /* CoronaVirus Information Section (Do's & Don't) */
+
 .info {
   font-family: 'Ubuntu', sans-serif;
   padding: 3% 10%;
@@ -121,13 +183,12 @@ th {
   width: 15%;
   border-radius: 100%;
   float: left;
-  margin-left: 5%;
+  margin-left: 15%;
 }
 
 .wrap-text {
-  padding-top: 2%;
+  padding: 2% 0% 2% 10%;
   margin-left: 30%;
-  padding-left: 10%;
 }
 
 #wraptext-heading1 {
@@ -142,7 +203,7 @@ th {
 /* CSS FelxBox for Do's and Dont's  */
 .flexbox {
   background-color: #FFFDD0;
-  padding: 1% 10% 3%;
+  padding: 3% 12% 3%;
 }
 
 .flex-container {
@@ -203,42 +264,16 @@ th {
   font-size: 1.3rem;
 }
 
-/* vaccine_info */
-/* home */
-.home {
-  height: 400px;
-}
-
-/* Covaxin */
-.covaxin {
-  padding: 20px 20px;
-  height: 700px;
-}
-
-/* Covishield */
-.covishield {
-  padding: 20px 20px;
-  height: 700px;
-}
-
-/* Related-NEWS */
-.NEWS {
-  height: 400px;
-  padding: 20px 20px;
-}
-
 /* Profile Card Section  */
 
-.profile-container{
-  padding: 3% 10%;;
+.profile-container {
+  padding: 3% 10% 2%;
 }
 
-.profile-cards{
+.profile-cards {
   padding: 3% 20% 0%;
   height: auto;
 }
-
-
 
 .our-team {
   padding: 30px 0 40px;

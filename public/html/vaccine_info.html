@@ -78,7 +78,7 @@
         <h1><i class="far fa-chart-bar"></i> COVID-19 Live Statistics: </h1>
     </div>
     <div style="padding-top: 10px;">
-        <h3><img src="assets/images/flag.svg" alt="indian-flag" class="flag"> India</h3>
+      <h4><img src="assets/images/flag-india.png" alt="indian-flag" style="height:50px;width:50px;"> India</h4>
     </div>
 
      <div class="row">
@@ -96,17 +96,17 @@
     <div class="statistics">
         <div class="row">
 
-            <div class="col-lg-4 col-md-4 col-sm-6 borderless-container borders">
+            <div class="col-lg-4 borderless-container borders">
                 <span id="totalCases" style="color: brown;">Total Cases</span> 
                 <span id="newCases" style="color: grey;">(+ )</span>
                 <div style="padding-top: 10px;">Confirmed</div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 borderless-container borders">
+            <div class="col-lg-4 borderless-container borders">
                 <span id="totalDeaths">Total Deaths</span> 
                 <span id="newDeaths" style="color: grey;">(+ )</span>
                 <div style="padding-top: 10px;">Deaths</div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 borderless-container">
+            <div class="col-lg-4 borderless-container">
                 <span id="recovered" style="color: forestgreen;">Recovered</span>
                 <span id="newRecovered" style="color: grey;">()</span> 
                 <div style="padding-top: 10px;">Recovered</div>
@@ -123,11 +123,11 @@
 
    <div class="row feature-button">
 
-     <div class="col-6">
+     <div class="col-lg-6 col-sm-12">
        <center>
          <strong><h3>About the vaccine</h3></strong>
          </center>
-       <img data-aos='fade-right' class="spacing-1" src="assets/images/covaxin.jpg" style="height:250px;width:250px;border-radius:100%;"alt="">
+       <img data-aos='fade-right' class="spacing-1 vaccine-img" src="assets/images/covaxin.jpg" alt="">
        <div class="spacing-1">
           <ul>
             <li style="text-align:left;" class="list"><a href="https://www.bharatbiotech.com/covaxin.html">COVAXIN</a>, India's indigenous COVID-19 vaccine by <a href="https://www.bharatbiotech.com/">Bharat Biotech</a> is developed in collaboration with the <a href="https://www.icmr.gov.in/">Indian Council of Medical Research (ICMR)</a> - National Institute of Virology (NIV).</li>
@@ -137,7 +137,7 @@
 
        </div>
      </div>
-     <div class="col-6">
+     <div class="col-lg-6 col-sm-12">
          <h3>Effectiveness</h3>
 
        <div class="spacing-2">
@@ -157,26 +157,20 @@
        </div>
 
      </div>
-
    </div>
-
-
-
   </div>
 
   <!-- Covishield -->
   <div class="covishield" id="covishield">
-      <h1 data-aos='fade-right' style="border-left: 10px solid #54e346;
-      padding: 10px 20px;
-      font-weight: 700;">COVISHIELD</h1>
+      <h1 data-aos='fade-right' style="border-left: 10px solid #54e346;padding: 10px 20px;font-weight: 700;">COVISHIELD</h1>
 
       <div class="row feature-button">
 
-        <div class="col-6">
+        <div class="col-lg-6 col-sm-12">
           <center>
             <strong><h3>About the vaccine</h3></strong>
             </center>
-          <img data-aos='fade-right' class="spacing-1" src="assets/images/covishield.jpg" style="height:250px;width:250px;border-radius:100%;"alt="">
+          <img data-aos='fade-right' class="spacing-1 vaccine-img" src="assets/images/covishield.jpg" alt="">
           <div class="spacing-1">
              <ul>
                <li style="text-align:left;" class="list">The <a href="https://en.wikipedia.org/wiki/Oxford%E2%80%93AstraZeneca_COVID-19_vaccine">Oxford–AstraZeneca</a> COVID-19 vaccine, and sold under the brand names Covishield and Vaxzevria</li>
@@ -186,7 +180,7 @@
 
           </div>
         </div>
-        <div class="col-6">
+        <div class="col-lg-6 col-sm-12">
             <h3>Effectiveness</h3>
 
           <div class="spacing-2">
@@ -222,30 +216,20 @@
     </div>
   </div>
 
-  <!-- JavaScript Code  -->
+  <!-- Footer -->
+  <footer class="bg-light text-center text-lg-start">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2020 Copyright: <a class="text-dark" href="/">Vaccine-Info </a> with ❤ by Souradip and Pranshu
+    </div>
+  </footer>
+
+  <!-- JavaScript Files  -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="js/newsapi.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      mirror: true,
-      easing: 'ease-in-out'
-    });
-  </script>
-  <script type="text/javascript">
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date;
-    !function () {
-        var t = document.createElement("script"), e = document.getElementsByTagName("script")[0];
-        t.async = !0, t.src = "https://embed.tawk.to/608ffb0ab1d5182476b5200d/1f4p6pvg1", t.charset = "UTF-8", t.setAttribute("crossorigin", "*"), e.parentNode.insertBefore(t, e)
-    }()
-</script>
+  <script src="js/animation.js"></script>
+  <script src="js/chatbox.js"></script>
+
 </body>
-<!-- Footer -->
-<footer class="bg-light text-center text-lg-start">
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2020 Copyright: <a class="text-dark" href="/">Vaccine-Info </a> with ❤ by Souradip and Pranshu
-  </div>
-</footer>
 
 </html>

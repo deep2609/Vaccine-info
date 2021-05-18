@@ -11,6 +11,17 @@ var update = document.getElementById('update');
 var xValues = [];
 var yValues = [];
 
+function convert(x) {
+    x = x.toString();
+    var lastThree = x.substring(x.length - 3);
+    var otherNumbers = x.substring(0, x.length - 3);
+    if (otherNumbers != '') {
+        lastThree = ',' + lastThree;
+    }
+    var res = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree;
+    return res;
+}
+
 fetch(covidURL).then(function (response) {
     if (response.status !== 200) {
         console.warn('Looks like there was a problem. Status Code: ' + response.status);
@@ -31,11 +42,11 @@ fetch(covidURL).then(function (response) {
         // console.log(newInfected);
 
 
-        totalCases.innerHTML = data['totalCases'];
-        newCases.innerHTML = "(+" + data['activeCasesNew'] + ")";
-        totalDeaths.innerHTML = data['deaths'];
-        newDeaths.innerHTML = "(+" + data['deathsNew'] + ")";
-        recovered.innerHTML = data['recovered'];
+        totalCases.innerHTML = convert(data['totalCases']);
+        newCases.innerHTML = "(+" + convert(data['activeCasesNew']) + ")";
+        totalDeaths.innerHTML = convert(data['deaths']);
+        newDeaths.innerHTML = "(+" + convert(data['deathsNew']) + ")";
+        recovered.innerHTML = convert(data['recovered']);
         newRecovered.innerHTML = "(+" + data['recoveredNew'] + ")";
         update.innerHTML = data['lastUpdatedAtApify'].substring(0, 10) + " : " + data['lastUpdatedAtApify'].substring(11, 19);
 
@@ -86,8 +97,8 @@ fetch(vaccineURL).then(function (response) {
         let peopleFullyVaccinated = data.IND.data[len - 2].people_fully_vaccinated;
         let totalVaccinated = data.IND.data[len - 2].total_vaccinations;
 
-        var x1Values = ["Total Vaccinated" , "People Fully Vaccinated"];
-        var y1Values = [totalVaccinated , peopleFullyVaccinated];
+        var x1Values = ["Total Vaccinated", "People Fully Vaccinated"];
+        var y1Values = [totalVaccinated, peopleFullyVaccinated];
         var barColorsSet2 = ["#04CD00", "#2c7fb8"];
         new Chart("myChart1", {
             type: "doughnut",

@@ -13,12 +13,6 @@ body {
     font-size: 1.4rem;
 }
 
-.logo {
-    width: 25%;
-    float: left;
-    padding-right: 10px;
-}
-
 .form {
     padding: 3% 10%;
     background-color: #fbe4cf;
@@ -37,31 +31,83 @@ body {
     padding: 5% 30% 2%;
 }
 
-select, input {
+select,
+input {
     margin-bottom: 12px;
 }
 
-.getnotified{
+.getnotified {
     margin-top: 25px;
     margin-bottom: 10px;
 }
 
-.update-details{
+.update-details {
     padding-top: 15px;
     color: rgb(104, 103, 103);
     font-size: 0.9rem;
 }
 
-.info-text{
+.info-text {
     padding: 3% 0%;
-    font-size: 0.9rem; 
+    font-size: 0.9rem;
     color: rgb(104, 103, 103);
 }
 
 /* Vaccination Image  */
 
-.vaccine-img{
+.vaccine-img {
     position: relative;
     z-index: 1;
     width: 350px;
+}
+
+.query {
+    height: 350px;
+    text-align: center;
+    padding: 10% 35%;
+    font-size: 0.9rem;
+}
+
+@media only screen and (max-width: 1100px) {
+    body {
+        padding-top: 70px;
+    }
+
+    .form-data {
+        padding-left: 0%;
+        padding-right: 0%;
+    }
+
+    .vaccine-img {
+        padding-top: 10%;
+    }
+
+    .query {
+        height: auto;
+        text-align: center;
+        padding: 15% 25% 10%;
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width: 777px) {
+    body {
+        padding-top: 100px;
+    }
+
+    .form-data {
+        padding-left: 0%;
+        padding-right: 0%;
+    }
+
+    .vaccine-img {
+        padding-top: 10%;
+    }
+
+    .query {
+        height: auto;
+        text-align: center;
+        padding: 15% 25% 10%;
+        font-size: 0.9rem;
+    }
 }

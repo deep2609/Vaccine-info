@@ -68,8 +68,7 @@
 
     <div class="form">
         <div class="form-text">
-            <img src="assets/images/vaccine.png" alt="logo" class="logo">
-            <h4 style="padding: 5% 0%;">Vaccine Notify</h4>
+            <h4><img src="assets/images/vaccine.png" alt="logo" style="height:50px;width:50px;"> Vaccine Notify</h4>
         </div>
         <div>
             <h5 style="color: grey;">Get notified instantly whenever vaccine near you is available!</h5>
@@ -77,7 +76,7 @@
 
         <!-- Form  -->
         <div class="form-data">
-            <!-- <form action="/subscribe" method="post"> -->
+            <form action="/subscribe" method="post">
                 <div class="container">
                     <div id="selectByState">
                       <form class="" method="POST" action="/post-feedback">
@@ -89,14 +88,14 @@
                         </select>
                         <input type="email" name="email" class="form-control" id="email" placeholder="Email" required>
                         <input type="number" name="pincode" class="form-control" id="email" placeholder="Pincode(Optional)">
-                        <button id="getnotified" type="submit" class="btn btn-lg btn-success btn-block getnotified" onclick="/post-feedback">Get Notified</button>
-
+                        <button id="getnotified" type="submit" class="btn btn-lg btn-success btn-block getnotified">Get Notified</button>
+                        OR
                         <button class="btn btn-lg btn-outline-info btn-block getnotified" onclick="location.href = '/#vaccine-availability'">Show Availability List</button>
                       </form>
 
                     </div>
                 </div>
-            <!-- </form> -->
+            </form>
         </div>
         <div class="update-details">Already Registered? <a href="">Update Details</a></div>
         <div class="info-text">
@@ -106,7 +105,7 @@
         <img src="assets/images/vaccination.png" alt="" class="vaccine-img">
     </div>
 
-    <div style="height: 350px; text-align: center; padding: 10% 35%; font-size: 0.9rem;">
+    <div class="query">
       <div>
         Can't find your City? Reach out to us in the chatbox on this page
         and we'll add it right away.
@@ -123,15 +122,10 @@
         © 2020 Copyright: <a class="text-dark" href="/">Vaccine-Info </a> with ❤ by Souradip and Pranshu
       </div>
     </footer>
+    <!-- JavaScript Files -->
+    <script src="js/chatbox.js"></script>
+    <script src="js/notify.js"></script>
 
-    <script type="text/javascript">
-      var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date;
-      !function () {
-          var t = document.createElement("script"), e = document.getElementsByTagName("script")[0];
-          t.async = !0, t.src = "https://embed.tawk.to/608ffb0ab1d5182476b5200d/1f4p6pvg1", t.charset = "UTF-8", t.setAttribute("crossorigin", "*"), e.parentNode.insertBefore(t, e)
-      }()
-  </script>
-  <script src="js/notify.js"></script>
 </body>
 
 </html>
