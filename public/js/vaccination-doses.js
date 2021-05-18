@@ -30,8 +30,8 @@ fetch(url).then(function (response) {
     let updateDate = data.IND.data[len - 2].date;
 
     $('#newVaccinations').html(convert(newVaccinations));
-    $('#totalVaccinated').html(convert(totalVaccinated) + "(<span style='color: green'>+" + convert(totalVaccinated - totalVaccinatedPrevious) + ")</span>");
-    $('#peopleFullyVaccinated').html(convert(peopleFullyVaccinated) + "(<span style='color: green'>+" + convert(peopleFullyVaccinated - peopleFullyVaccinatedPrevious) + ")</span>");
+    $('#totalVaccinated').html(convert(totalVaccinated) + "<br>(<span style='color: green'>+" + convert(totalVaccinated - totalVaccinatedPrevious) + ")</span>");
+    $('#peopleFullyVaccinated').html(convert(peopleFullyVaccinated) + "<br>(<span style='color: green'>+" + convert(peopleFullyVaccinated - peopleFullyVaccinatedPrevious) + ")</span>");
     $('#updateDate').append(updateDate);
 
   });
