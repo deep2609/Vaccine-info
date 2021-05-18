@@ -242,8 +242,8 @@ checkAvailability.addEventListener("click", function () {
               addRow += "<td>No Slots</td>";
             } else {
               if (tempData[idx][0].substring(1, tempData[idx][0].length - 1) == dates[j]) {
-                if (tempData[idx][1] != 0) {
-                  addRow += "<td style:'background:#f9f871;'>Available Capacity : " + tempData[idx][1] + "<br>Min Age : " + tempData[idx][2] + "<br>Vaccine : " + tempData[idx][3] + "</td>";
+                if (tempData[idx][1] > 0) {
+                  addRow += "<td style='background:#f9f871;'>Available Capacity : " + tempData[idx][1] + "<br>Min Age : " + tempData[idx][2] + "<br>Vaccine : " + tempData[idx][3] + "</td>";
                 }
                 else {
                   addRow += "<td>Available Capacity : " + tempData[idx][1] + "<br>Min Age : " + tempData[idx][2] + "<br>Vaccine : " + tempData[idx][3] + "</td>";
@@ -325,20 +325,3 @@ checkAvailability.addEventListener("click", function () {
     });
   }
 });
-
-
-
-// var tableOffset = $("#availabilityTable").offset().top;
-// var $header = $("#availabilityTable > thead").clone();
-// var $fixedHeader = $("#header-fixed").append($header);
-//
-// $().bind("scroll", function() {
-//     var offset = $(this).scrollTop();
-//
-//     if (offset >= tableOffset && $fixedHeader.is(":hidden")) {
-//         $fixedHeader.show();
-//     }
-//     else if (offset < tableOffset) {
-//         $fixedHeader.hide();
-//     }
-// });
