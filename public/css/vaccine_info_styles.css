@@ -1,10 +1,12 @@
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
     margin-top: 73px;
     font-family: 'Itim', cursive;
+    overflow-x: hidden;
 
 }
 
@@ -27,6 +29,35 @@ body {
     font-size: 1.4rem;
 }
 
+@media only screen and (max-width: 767px){
+  .navbar-brand{
+    width: 302px;
+    padding-left: 3px;
+    margin-right:0;
+  }
+}
+
+/* Charts */
+
+#myChart{
+  width:650px;
+  max-width:650px;
+}
+#myChart1{
+  width:650px;
+  max-width:650px;
+}
+
+@media only screen and (max-width: 700px){
+  #myChart{
+    width:90%;
+    max-width:90%;
+  }
+  #myChart1{
+    width:90%;
+    max-width:90%;
+  }
+}
 .feature-button {
     text-align: center;
     padding-top: 3%;
