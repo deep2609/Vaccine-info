@@ -29,10 +29,18 @@ fetch(url).then(function (response) {
 
     let updateDate = data.IND.data[len - 2].date;
 
+    let currentDate = new Date();
+    let date = currentDate.getDate();
+    let month = currentDate.getMonth();
+    let year = currentDate.getFullYear();
+    let toAdd = "";
+    if (month < 9) toAdd += '0';
+    let curr = year + "-" + toAdd + (month + 1) + "-" + date;
+
     $('#newVaccinations').html(convert(newVaccinations));
     $('#totalVaccinated').html(convert(totalVaccinated) + "<br>(<span style='color: green'>+" + convert(totalVaccinated - totalVaccinatedPrevious) + ")</span>");
     $('#peopleFullyVaccinated').html(convert(peopleFullyVaccinated) + "<br>(<span style='color: green'>+" + convert(peopleFullyVaccinated - peopleFullyVaccinatedPrevious) + ")</span>");
-    $('#updateDate').append(updateDate);
+    $('#updateDate').append(curr);
 
   });
 });
