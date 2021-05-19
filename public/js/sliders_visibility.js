@@ -33,6 +33,7 @@ else{
   $('.desktop-size').hide();
   $('.ipad-size').hide();
   $('.mobile-size').hide();
+  
 }
 
 
