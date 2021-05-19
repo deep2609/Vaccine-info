@@ -13,6 +13,14 @@ body {
     font-size: 1.4rem;
 }
 
+@media only screen and (max-width: 767px){
+  .navbar-brand{
+    width: 302px;
+    padding-left: 3px;
+    margin-right:0;
+  }
+}
+
 .form {
     padding: 3% 10%;
     background-color: #fbe4cf;
