@@ -1,9 +1,11 @@
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   margin-top: 73px;
+  overflow-x: hidden;
 }
 
 .section-heading {
@@ -24,6 +26,13 @@ body {
   font-size: 1.4rem;
 }
 
+@media only screen and (max-width: 767px){
+  .navbar-brand{
+    width: 302px;
+    padding-left: 3px;
+    margin-right:0;
+  }
+}
 /* About Section  */
 
 .about {
@@ -31,6 +40,15 @@ body {
   padding: 3% 10% 5% 10%;
 }
 
+@media only screen and (max-width: 625px){
+  .about{
+    height: auto;
+    padding-top: 3%;
+    padding-left: 0;
+    padding-bottom: 5%;
+    padding-right: 0;
+  }
+}
 /* Carousel  */
 
 /* .slider-diplay {
@@ -51,10 +69,24 @@ body {
   padding-left: 0;
 }
 .small-size{
-  padding-top: 10%;
+  padding-top: 7%;
+  /* padding-right: 40%; */
+  padding-left:6%;
   padding-left: 0;
+
+  margin-left: 0;
 }
 
+@media only screen and (max-width: 625px) {
+    .small-size{
+      padding-top: 6%;
+      padding-right:0;
+      padding-left:0;
+      margin-left: 0;
+      /* margin-right: 10%; */
+
+    }
+}
 
 
 /* Vaccine Data */
@@ -113,6 +145,36 @@ body {
 
     }
 }
+
+@media only screen and (max-width: 650px) {
+    .feature-1 img{
+      width: 25%;
+      height: 30%;
+
+    }
+
+    .feature-2 img{
+      width: 25%;
+      height: 30%;
+
+    }
+
+    .feature-3 img{
+      width: 25%;
+      height: 30%;
+
+    }
+}
+
+@media only screen and (max-width: 595px) {
+  .feature-2{
+    padding-top: 5%;
+  }
+  .feature-3{
+    padding-top: 5%;
+  }
+}
+
 /* Vaccine Availability Form */
 
 .search-toggle {
@@ -147,7 +209,12 @@ body {
   max-height: 500px;
   max-width: 1100px;
 }
-
+@media only screen and (max-width: 650px){
+  .table-responsive {
+    max-height: 500px;
+    max-width: 100%;
+  }
+}
 .fixTableHead {
   overflow-y: auto;
   height: auto;
@@ -312,6 +379,19 @@ hr {
   font-size: 1.3rem;
 }
 
+@media only screen and (max-width: 650px) {
+    .flex-container{
+      flex-direction: column;
+    }
+    .flex-child2{
+      padding-top: 4%;
+    }
+    .flex-child-2{
+      padding-top:4%;
+    }
+}
+
+
 /* Profile Card Section  */
 
 .profile-container {
@@ -321,6 +401,13 @@ hr {
 .profile-cards {
   padding: 3% 20% 0%;
   height: auto;
+}
+
+@media only screen and (max-width: 650px){
+  .profile-cards {
+    padding: 3% 7% 0%;
+    height: auto;
+  }
 }
 
 .our-team {
