@@ -6,7 +6,7 @@ const cron = require('node-cron');
 const moment = require('moment');
 const path = require('path');
 const mongodb = require('mongodb');
-var dbConn = mongodb.MongoClient.connect('mongodb://localhost:27017');
+var dbConn = mongodb.MongoClient.connect('mongodb://localhost:27017');  // use mongoDB atlas when hosting on server   (follow same procedures for all other links below)
 
 let userData;
 let deletedIds=[];
