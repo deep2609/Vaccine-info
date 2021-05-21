@@ -6,7 +6,8 @@ const cron = require('node-cron');
 const moment = require('moment');
 const path = require('path');
 const mongodb = require('mongodb');
-var dbConn = mongodb.MongoClient.connect('mongodb://localhost:27017');  // use mongoDB atlas when hosting on server   (follow same procedures for all other links below)
+const https = require('https');
+var dbConn = mongodb.MongoClient.connect('mongoDB Atlas account info');
 
 let userData;
 let deletedIds=[];
@@ -31,21 +32,36 @@ app.get("/vaccine-info", function (req, res) {
     res.sendFile(__dirname + "/public/html/vaccine_info.html");
 })
 
+app.get("/unsubscribe",function(req,res){
+  res.sendFile(__dirname + "/public/html/unsubscribe.html");
+})
+
 app.post("/success",function(req,res){
   res.redirect("/");
 })
 
-app.post("/failure",function(req,res){
-  res.redirect("/notify");
-})
+// app.post("/failure",function(req,res){
+//   res.redirect("/notify");
+// })
 
-
+app.post('/unsubscribed-successfully',function(req,res){
+    mongodb.MongoClient.connect('mongoDB Atlas account info',(err,client) => {
+          var db = client.db('db_name');
+          delete req.body._id; // for safety reasons
+          db.collection('db').deleteMany({
+            "email" : req.body.email
+          });
+    });
+    console.log(req.body.email);
+    console.log(typeof(req.body.email));
+    res.sendFile(__dirname + "/public/html/unsubscribed-successfully.html");
+});
 app.post('/post-feedback', function (req, res) {
 
-    mongodb.MongoClient.connect('mongodb://localhost:27017', (err, client) => {
-        var db = client.db('test');
+    mongodb.MongoClient.connect('mongoDB Atlas account info', (err, client) => {
+        var db = client.db('db_name');
         delete req.body._id; // for safety reasons
-        db.collection('data').insertOne(req.body);
+        db.collection('db').insertOne(req.body);
 
     });
 
@@ -55,7 +71,7 @@ app.post('/post-feedback', function (req, res) {
 
 async function main() {
     try {
-        cron.schedule('0 0 */6 * * *', async () => {
+        cron.schedule('* * * * *', async () => {
             checkAvailability();
         });
     } catch (e) {
@@ -71,8 +87,8 @@ async function checkAvailability() {
 
     let datesArray = await fetchNext1Days();
     await getUserData();
-   console.log("I'm here");
-   console.log(userData);
+   // console.log("I'm here");
+   // console.log(userData);
 
     if(typeof userData !== 'undefined'){
       for(let i=0;i<userData.length;i++){
@@ -99,12 +115,12 @@ async function fetchNext1Days() {
 }
 
 async function getUserData() {
-    mongodb.MongoClient.connect('mongodb://localhost:27017', (err, client) => {
-        var db = client.db('test');
-        db.collection('data').find({}).toArray().then(function (feedbacks) {
+    mongodb.MongoClient.connect('mongoDB Atlas account info', (err, client) => {
+        var db = client.db('db_name');
+        db.collection('db').find({}).toArray().then(function (feedbacks) {
             userData = (feedbacks);
             console.log(userData);
-            console.log(typeof(userData));
+            // console.log(typeof(userData));
 
         });
     });
@@ -122,18 +138,25 @@ function getSlotsForDate(DATE, element) {
             'Host': 'cdn-api.co-vin.in',
             'Accept-Language': 'en_US',
             'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+
         }
     };
 
-    request(options, function (error, response) {
+    request(options, function(error,response){
         if (error) {
+            // console.log(typeof(error));
             throw new Error(error);
         }
 
         let validSlots = [];
         let data = JSON.parse(response.body);
+        //var str = response.body;
+        // let str=response.body;
+        // str=str.trim();
+        // let data = JSON.parse(JSON.stringify(str));
         // console.log(data);
-        for (var i = 0; i < data.centers.length; ++i) {
+        console.log(typeof(data));
+        for(var i = 0; i < data.centers.length; ++i) {
             for (var j = 0; j < data.centers[i].sessions.length; ++j) {
                 let availability = data.centers[i].sessions[j].available_capacity;
                 let minAge = data.centers[i].sessions[j].min_age_limit;
@@ -144,17 +167,11 @@ function getSlotsForDate(DATE, element) {
             }
         }
         console.log(validSlots.length);
-        if (validSlots.length > 0) {
+        if(validSlots.length > 0) {
             console.log("Vaccination Centres Found");
             notifyMe(validSlots, element.email);
 
-            mongodb.MongoClient.connect('mongodb://localhost:27017', (err, client) => {
-                var db = client.db('test');
-                db.collection('data').deleteOne({
-                  "_id" : element._id
-                });
-            });
-            deletedIds.push(element);
+           
         }
     });
     // return ok;
@@ -163,7 +180,9 @@ function getSlotsForDate(DATE, element) {
 async function notifyMe(validSlots, email) {
     let slotDetails = JSON.stringify(validSlots, null, '\t');
     //console.log(validSlots[0]);
-    let html=`<table style="border-collapse: collapse; width: 75%;">
+    let html=`<h5>Vaccination Centres : </h5>`;
+    html+=`<p>If you want to unsubscribe click on the link below the table. </p>`;
+    html+=`<table style="border-collapse: collapse; width: 75%;">
     <thead style=" padding-top: 12px; padding-bottom: 12px; text-align: center; background-color: #009879; color: white; ">
         <th style="border: 1px solid #ddd; padding: 8px;">Centre Name</th>
         <th style="border: 1px solid #ddd; padding: 8px;">Vaccine</th>
@@ -195,13 +214,17 @@ async function notifyMe(validSlots, email) {
        html+=`</tr>`;
      }
    }
-   html+=`</tbody>;`
-html+=`</table>`
+   html+=`</tbody>`;
+html+=`</table>`;
+html+=`<a href="https://vaccine-info-2021.herokuapp.com/unsubscribe">Click here to unsubscribe</a>`;
+
+
+
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
             user: 'vaccineinfo2021@gmail.com',
-            pass: 'Notify2021'
+            pass: 'password'
         }
     });
 
